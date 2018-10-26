@@ -78,7 +78,7 @@ public:
 	}
 	void East(Movement test) {
 		cout << "You are in the east end of the room." << endl;
-		cout << south_des << endl;
+		cout << east_des << endl;
 		while (input != "Exit") {
 			cin >> input;
 			if (input == "North") {
@@ -113,7 +113,7 @@ public:
 	}
 	void West(Movement test) {
 		cout << "You are in the west end of the room." << endl;
-		cout << south_des << endl;
+		cout << west_des << endl;
 		while (input != "Exit") {
 			cin >> input;
 			if (input == "North") {
@@ -147,7 +147,7 @@ public:
 	}
 	void Center(Movement test) {
 		cout << "You are in the center of the room." << endl;
-		cout << south_des << endl;
+		cout << center_des << endl;
 		while (input != "Exit") {
 			cin >> input;
 			if (input == "North") {
