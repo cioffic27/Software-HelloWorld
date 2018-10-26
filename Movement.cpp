@@ -1,13 +1,15 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 class Movement {
 public:
-	string north_des;
-	string south_des;
-	string east_des;
-	string west_des;
-	string center_des;
-	string input;
+	string north_des= "";
+	string south_des = "";
+	string east_des = "";
+	string west_des= "";
+	string center_des= "";
+	string input = "";
 
 	void North( Movement test) {
 		cout << "You are in the north end of the room." << endl;
@@ -21,20 +23,20 @@ public:
 			
 			if (input == "South") {
 				cout << "You go South" << endl;
-				test.South();
+				test.South(test);
 			}
 			if (input == "Center")
 			{
 				cout << "You go to the Center" << endl;
-				test.Center();
+				test.Center(test);
 			}
 			if (input == "East") {
 				cout << "You go East" << endl;
-				test.East
+				test.East(test)
 			}
 			if (input == "West") {
 				cout << "You go West" << endl;
-				test.West;
+				test.West(test);
 
 			}
 			if (input == "Search") {
@@ -50,7 +52,7 @@ public:
 			cin >> input;
 			if (input == "North") {
 				cout << "You go North" << endl;
-				test.North();
+				test.North(test);
 
 			}
 
@@ -60,15 +62,15 @@ public:
 			if (input == "Center")
 			{
 				cout << "You go to the Center" << endl;
-				test.Center();
+				test.Center(test);
 			}
 			if (input == "East") {
 				cout << "You go East" << endl;
-				test.East
+				test.East(test);
 			}
 			if (input == "West") {
 				cout << "You go West" << endl;
-				test.West;
+				test.West(test);
 
 			}
 			if (input == "Search") {
@@ -83,18 +85,18 @@ public:
 			cin >> input;
 			if (input == "North") {
 				cout << "You go North" << endl;
-				test.North();
+				test.North(test);
 
 			}
 			if (input == "South") {
 				cout << "You go South" << endl;
-				test.South();
+				test.South(test);
 			}
 			
 			if (input == "Center")
 			{
 				cout << "You go to the Center" << endl;
-				test.Center();
+				test.Center(test);
 			}
 			if (input == "East") {
 				cout << "You are already east" << endl;
@@ -103,7 +105,7 @@ public:
 			}
 			if (input == "West") {
 				cout << "You go West" << endl;
-				test.West;
+				test.West(test);
 
 			}
 			if (input == "Search") {
@@ -118,22 +120,22 @@ public:
 			cin >> input;
 			if (input == "North") {
 				cout << "You go North" << endl;
-				test.North();
+				test.North(test);
 
 			}
 			if (input == "South") {
 				cout << "You go South" << endl;
-				test.South();
+				test.South(test);
 			}
 
 			if (input == "Center")
 			{
 				cout << "You go to the Center" << endl;
-				test.Center();
+				test.Center(test);
 			}
 			if (input == "East") {
 				cout << "You go East" << endl;
-				test.East
+				test.East(test)
 			}
 			if (input == "West") {
 				cout << "You are already West" << endl;
@@ -152,12 +154,12 @@ public:
 			cin >> input;
 			if (input == "North") {
 				cout << "You go North" << endl;
-				test.North();
+				test.North(test);
 
 			}
 			if (input == "South") {
 				cout << "You go South" << endl;
-				test.South();
+				test.South(test);
 			}
 
 			if (input == "Center")
@@ -167,11 +169,11 @@ public:
 			}
 			if (input == "East") {
 				cout << "You go East" << endl;
-				test.East
+				test.East(test);
 			}
 			if (input == "West") {
 				cout << "You go West" << endl;
-				test.West;
+				test.West(test);
 
 			}
 			if (input == "Search") {
@@ -180,3 +182,4 @@ public:
 		}
 	}
 };
+
