@@ -32,7 +32,7 @@ public:
 			}
 			if (input == "East") {
 				cout << "You go East" << endl;
-				test.East(test)
+				test.East(test);
 			}
 			if (input == "West") {
 				cout << "You go West" << endl;
@@ -135,7 +135,7 @@ public:
 			}
 			if (input == "East") {
 				cout << "You go East" << endl;
-				test.East(test)
+				test.East(test);
 			}
 			if (input == "West") {
 				cout << "You are already West" << endl;
@@ -182,4 +182,10 @@ public:
 		}
 	}
 };
+
+
+int main() {
+	Movement room2;
+	room2.North(room2);
+}
 
