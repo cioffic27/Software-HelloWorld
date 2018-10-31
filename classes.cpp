@@ -299,6 +299,67 @@ using namespace std;
 		{
 			cout << "you picked up the portrait, there was a safe behind it" << endl;
 		}
+		else if (command == "YELLOW VIlE")
+		{
+			cout << "you picked up the Yellow Vile" << endl;
+			list->InsertAtFront("Yellow Vile");
+		}
+		else if (command == "RED VIlE")
+		{
+			cout << "you picked up the Red Vile" << endl;
+			list->InsertAtFront("Red Vile");
+		}
+		else if (command == "BLUE VIlE")
+		{
+			cout << "you picked up the Blue Vile" << endl;
+			list->InsertAtFront("Blue Vile");
+		}
+		else if (command == "ORANGE VIlE")
+		{
+			cout << "you picked up the Orange Vile" << endl;
+			list->InsertAtFront("Orange Vile");
+		}
+		else if (command == "PURPLE VIlE")
+		{
+			cout << "you picked up the Purple Vile" << endl;
+			list->InsertAtFront("Purple Vile");
+		}
+		else if (command == "LIST")
+		{
+			cout << "you picked up the list of chemical names and abbreviations" << endl;
+			list->InsertAtFront("Chemical List");
+		}
+		else if (command == "SCREWDRIVER")
+		{
+			cout << "you picked up the Screwdriver" << endl;
+			list->InsertAtFront("Screwdriver");
+		}
+		else if (command == "BOTTLE OF WATER")
+		{
+			cout << "you picked up the Bottle of Water" << endl;
+			list->InsertAtFront("Bottle of Water");
+		}
+		else if (command == "NEUROSCIENCE BOOK")
+		{
+			cout << "you picked up the Neuroscience Book" << endl;
+			list->InsertAtFront("Neuroscience Book");
+		}
+		else if (command == "PHYSICS BOOK")
+		{
+			cout << "you picked up the Physics Book" << endl;
+			list->InsertAtFront("Physics Book");
+		}
+		else if (command == "THERMODYNAMICS BOOK")
+		{
+			cout << "you picked up the Thermodynamics Book" << endl;
+			list->InsertAtFront("Thermodynamics Book");
+		}
+		else if (command == "INCUBATOR KEY")
+		{
+			cout << "you picked up the Incubator Key" << endl;
+			list->InsertAtFront("Incubator Key");
+		}
+		
 	}
 
 	void Actions::Use()
@@ -411,6 +472,53 @@ using namespace std;
 				if (playerPlace == west)
 					cout << "you used the fireplace tools to remove the ash from the fireplace, you can now see a candle laying inside the fireplace" << endl;
 			}
+			else if (command == "Incubator Key")
+			{
+				if (playerPlace == east)
+					cout << "you used the Incubator Key to open both incubators, you can now see a orange vile, a blue vile, and a purple vile " << endl;
+			}
+			else if (command == "Neuroscience Book")
+			{
+					cout << "you open the book to reveal an Incubator Key inside" << endl;
+			}
+			else if (command == "Red Vile")
+			{
+				int bar1 = 1;
+				if (playerPlace == west)
+				{
+				cout<< "The first Bar has melted"<<endl;	
+				bar1= 0;	
+				}
+			}
+			else if (command == "Orange Vile")
+			{
+				int bar2 = 1;
+				if (playerPlace == west && bar1=0)
+				{
+				cout<< "The second Bar has melted"<<endl;	
+				bar2= 0;	
+				}
+			}
+			else if (command == "Yellow Vile")
+			{
+				int bar3 = 1;
+				if (playerPlace == west && bar2=0)
+				{
+				cout<< "The third Bar has melted"<<endl;	
+				bar3= 0;	
+				}
+			}
+			else if (command == "Blue Vile")
+			{
+				int bar4 = 1;
+				if (playerPlace == west && bar3=0)
+				{
+				cout<< "The fourth Bar has melted"<<endl;	
+				bar4= 0;	
+				}
+			}
+			
+			
 		}
 	}
 
@@ -426,4 +534,3 @@ using namespace std;
 		cout << "These are the possible commands:" << endl;
 		cout << "move, pickup/pick up, use, inventory/items, commands, quit/exit" << endl << endl;
 	}
-
