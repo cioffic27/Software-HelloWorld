@@ -23,10 +23,18 @@ int main()
 	string w2="You see a large brick fireplace with sculptures on the mantle and a set of fireplace tools off to the side.  It seems as though there is something hidden under the pile of ash residue inside the fireplace, but you can't make out what it is.";
 	string c2="You see a large dining room table with ten chairs.  On the table are three candlesticks but they do not have candles inside them.";
 
+	//descriptions for room 3
+	string n3="You see a table of microscopes with different assorted items laid out.";
+	string s3="You see a table with multiple books laying out closed: One book on thermodynamics, one book on physics, and one book on Neuroscience";
+	string e3="You see 2 incubators in between them is a computer running simulations.";
+	string w3=" You see a iron bar door which has locked from the outside. Above the door reads a sign : EMERGENCY LOCK-IN PROCEDURE: Rely On Your Brains";
+	string c3="You find yourself in a laboratory in front of you is a table with beakers and burners and a yellow vile of chemicals in the middle.";
+	
 	string command;
 
 	Actions room1(n1, s1, e1, w1, c1);
 	Actions room2(n2, s2, e2, w2, c2);
+	Actions room3(n3, s3, e3, w3, c3);
 
 	cout << "Welcome to Escape the Room, would you like to play" << endl;
 	getline(cin, command);
@@ -73,7 +81,24 @@ int main()
 			else
 				cout << "That is not a valid command" << endl;
 		}
+		while (room3.room3_finished != true)
+		{
+			cout << "Welcome to the Third room \n";
+			cout << "What do you want to do" << endl;
+			getline(cin, command);
+			transform(command.begin(), command.end(), command.begin(), toupper);
+			if (command == "MOVE")
+				room2.Move();
+			else if (command == "PICKUP" || command == "PICK UP")
+				room2.Pickup();
+			else if (command == "USE")
+				room2.Use();
+			else if (command == "INVENTORY" || command == "ITEMS")
+				room2.Inventory();
+			else if (command == "QUIT" || command == "EXTI")
+				break;
+			else
+				cout << "That is not a valid command" << endl;
+		}
 	}
 		return 0;
-	
-}
