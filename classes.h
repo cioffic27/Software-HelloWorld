@@ -58,13 +58,24 @@ public:
 	bool room2_finished = false;
 	bool room3_finished = false;
 
+	//item pickup bools
+	bool room1_items = true;
+	bool room2_items = false;
+	bool room3_items = false;
+
 	int code_guess;
-	int code_correct = 6185;
+	int code_correct = 6184;
 	bool code_entering = false;
 
 	bool candle1_used = false;
 	bool candle2_used = false;
 	bool candle3_used = false;
+
+	//room 3 variables
+	int bar1 = 1;
+	int bar2 = 1;
+	int bar3 = 1;
+	int bar4 = 1;
 
 	//function for picking up an item---for objects changed to a generic pick command for any room instance. Inventory will move from room to room
 	void Pickup();
@@ -75,3 +86,4 @@ public:
 };
 
 #endif // !classes_h
+#pragma once
