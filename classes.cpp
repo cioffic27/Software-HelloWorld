@@ -278,7 +278,7 @@ void Actions::Pickup()
 				cout << "you picked up the fire" << endl;
 				cout << "You are now on fire!" << endl;
 				cout << "You died. Game Over." << endl;
-				exit(10);
+				exit(20);
 			}
 			else
 				cout << "this item is not here" << endl;
@@ -598,7 +598,7 @@ void Actions::Use()
 					cout << " As soon as the liquid hits the floor it turns to gas" << endl;
 					cout << "You begin to choke on the gas" << endl;
 					cout << "You Died. Game Over.";
-					exit(10);
+					exit(20);
 				}
 			}
 			else if (command == "orange vial")
