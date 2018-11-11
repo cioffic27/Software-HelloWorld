@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+//This code just echos the response of what the user inputs.
+
+int main ()
+{
+  string d;
+  cout << "Enter North,South,East,West to move"<<endl;
+  getline (cin, d);
+  cout << "You moved " << d << ".\n";
+
+  cout << "Enter North,South,East,West to move"<<endl;
+  getline (cin, d);
+  cout << "You moved " << d << ".\n";
+  
+    cout << "Enter North,South,East,West to move"<<endl;
+  getline (cin, d);
+  cout << "You moved " << d << ".\n";
+  
+    cout << "Enter North,South,East,West to move"<<endl;
+  getline (cin, d);
+  cout << "You moved " << d << ".\n";
+  return 0;
+}
