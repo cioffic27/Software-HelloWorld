@@ -8,6 +8,9 @@
 #include <algorithm>
 using namespace std;
 
+//global variables that can be accessed anywhere in the program
+extern int turnNum;			//New Issue Ticket 221
+
 class Node {
 public:
 	string data;

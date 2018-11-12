@@ -1,9 +1,11 @@
+#include "pch.h"
 #include<iomanip>
 #include<iostream>
 #include<string>
 #include <stdio.h>
 #include <algorithm>
 #include "classes.h"
+#include <stdlib.h>
 using namespace std;
 
 Node::Node(string x)
@@ -153,6 +155,8 @@ void Movement::North()
 		cout << "you are already in the north end of the room." << endl;
 	else
 	{
+		turnNum++;				//New Issue Ticket 221
+
 		cout << "You are in the north end of the room." << endl << endl;
 		playerPlace = north;
 		cout << "Would you like to look around?" << endl;
@@ -171,7 +175,9 @@ void Movement::South()
 		cout << "you are already in the south end of the room." << endl;
 	else
 	{
-		cout << "You are in the south end of the room." << endl << endl;
+		turnNum++;				//New Issue Ticket 221
+
+			cout << "You are in the south end of the room." << endl << endl;
 		playerPlace = south;
 		cout << "Would you like to look around?" << endl;
 		getline(cin, input);
@@ -188,6 +194,8 @@ void Movement::East()
 		cout << "you are already in the east end of the room." << endl;
 	else
 	{
+		turnNum++;				//New Issue Ticket 221
+
 		cout << "You are in the east end of the room." << endl << endl;
 		playerPlace = east;
 		cout << "Would you like to look around?" << endl;
@@ -205,6 +213,8 @@ void Movement::West()
 		cout << "you are already in the west end of the room." << endl;
 	else
 	{
+		turnNum++;				//New Issue Ticket 221
+
 		cout << "You are in the west end of the room." << endl << endl;
 		playerPlace = west;
 		cout << "Would you like to look around?" << endl;
@@ -222,6 +232,8 @@ void Movement::Center()
 		cout << "you are already in the center of the room." << endl;
 	else
 	{
+		turnNum++;				//New Issue Ticket 221
+
 		cout << "You are in the center of the room." << endl << endl;
 		playerPlace = center;
 		cout << "Would you like to look around?" << endl;
@@ -257,6 +269,7 @@ void Actions::Pickup()
 				list->InsertAtFront("key");
 			}
 		}
+
 	}
 	else if (room2_items == true)
 	{
@@ -270,7 +283,8 @@ void Actions::Pickup()
 			else
 				cout << "this item is not here" << endl;
 		}
-		else if (command == "FIRE") {
+
+		if (command == "FIRE") {
 			if (playerPlace == west) {
 				cout << "you picked up the fire" << endl;
 				cout << "You are now on fire!" << endl;
@@ -279,6 +293,9 @@ void Actions::Pickup()
 			}
 			else
 				cout << "this item is not here" << endl;
+
+
+
 		}
 		else if (command == "RED CUP")
 		{
@@ -461,6 +478,7 @@ void Actions::Use()
 				{
 					cout << "you successfully opened the safe.  Inside there is a candle." << endl;
 					code_entering = false;
+					turnNum++;				//New Issue Ticket 221
 					return;
 				}
 				else
@@ -469,7 +487,10 @@ void Actions::Use()
 					getline(cin, command);
 					transform(command.begin(), command.end(), command.begin(), toupper);
 					if (command == "NO")
+					{
 						code_entering = false;
+						turnNum++;				//New Issue Ticket 221
+					}
 					return;
 				}
 			}
@@ -506,6 +527,7 @@ void Actions::Use()
 			if (command == "paper")
 			{
 				cout << "You have used the " << command << ", on it is the code 6185." << endl;
+				turnNum++;
 			}
 			else if (command == "candle1")
 			{
@@ -513,6 +535,7 @@ void Actions::Use()
 				{
 					cout << "you placed the first candle in the candlestick" << endl;
 					candle1_used = true;
+					turnNum++;				//New Feature Ticket
 					list->DeleteByValue(command);
 					if (candle1_used == true && candle2_used == true && candle3_used == true)
 					{
@@ -530,6 +553,7 @@ void Actions::Use()
 				{
 					cout << "you placed the second candle in the candlestick" << endl;
 					candle2_used = true;
+					turnNum++;				//New Issue Ticket 221
 					list->DeleteByValue(command);
 					if (candle1_used == true && candle2_used == true && candle3_used == true)
 					{
@@ -547,6 +571,7 @@ void Actions::Use()
 				{
 					cout << "you placed the third candle in the candlestick" << endl;
 					candle3_used = true;
+					turnNum++;				//New Issue Ticket 221
 					list->DeleteByValue(command);
 					if (candle1_used == true && candle2_used == true && candle3_used == true)
 					{
@@ -572,6 +597,7 @@ void Actions::Use()
 				{
 					cout << "You used the incubator key to open both incubators, you can now see an orange vial, a blue vial and a red vial" << endl;
 					list->DeleteByValue(command);
+					turnNum++;				//New Issue Ticket 221
 				}
 			}
 			else if (command == "red vial")
@@ -581,6 +607,7 @@ void Actions::Use()
 					cout << "one of the four bars has melted" << endl;
 					bar1 = 0;
 					list->DeleteByValue(command);
+					turnNum++;				//New Issue Ticket 221
 					if (bar1 == 0 && bar2 == 0 && bar3 == 0 && bar4 == 0)
 					{
 						cout << "all four bars are melted, you were able to open the door and escape" << endl;
@@ -602,6 +629,7 @@ void Actions::Use()
 					cout << "one of the four bars has melted" << endl;
 					bar2 = 0;
 					list->DeleteByValue(command);
+					turnNum++;				//New Issue Ticket 221
 					if (bar1 == 0 && bar2 == 0 && bar3 == 0 && bar4 == 0)
 					{
 						cout << "all four bars are melted, you were able to open the door and escape" << endl;
@@ -623,6 +651,7 @@ void Actions::Use()
 					cout << "One of the four bars has melted" << endl;
 					bar3 = 0;
 					list->DeleteByValue(command);
+					turnNum++;				//New Issue Ticket 221
 					if (bar1 == 0 && bar2 == 0 && bar3 == 0 && bar4 == 0)
 					{
 						cout << "all four bars are melted, you were able to open the door and escape" << endl;
@@ -645,6 +674,7 @@ void Actions::Use()
 					cout << "One of the four bars has melted" << endl;
 					bar4 = 0;
 					list->DeleteByValue(command);
+					turnNum++;				//New Issue Ticket 221
 					if (bar1 == 0 && bar2 == 0 && bar3 == 0 && bar4 == 0)
 					{
 						cout << "all four bars are melted, you were able to open the door and escape" << endl;
@@ -652,12 +682,12 @@ void Actions::Use()
 						room3_items = false;
 					}
 				}
-				else {
-					cout << " As soon as the liquid hits the floor it turns to gas" << endl;
-					cout << "You begin to choke on the gas" << endl;
-					cout << "You Died. Game Over.";
-					exit(20);
-				}
+			}
+			else {
+				cout << " As soon as the liquid hits the floor it turns to gas" << endl;
+				cout << "You begin to choke on the gas" << endl;
+				cout << "You Died. Game Over.";
+				exit(20);
 			}
 		}
 	}
@@ -673,6 +703,5 @@ void Actions::Inventory()
 void Actions::Commands()
 {
 	cout << "These are the possible commands:" << endl;
-	cout << "move, pickup/pick up, use, inventory/items, commands, quit/exit" << endl << endl;
+	cout << "move, pickup/pick up, use, inventory/items, commands, turn, quit/exit" << endl << endl; 			//New Issue Ticket 221
 }
-
