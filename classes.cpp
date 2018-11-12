@@ -270,6 +270,16 @@ void Actions::Pickup()
 			else
 				cout << "this item is not here" << endl;
 		}
+		else if (command == "FIRE") {
+			if (playerPlace == west) {
+				cout << "you picked up the fire" << endl;
+				cout << "You are now on fire!" << endl;
+				cout << "You died. Game Over." << endl;
+				exit(20);
+			}
+			else
+				cout << "this item is not here" << endl;
+		}
 		else if (command == "RED CUP")
 		{
 			if (playerPlace == south)
@@ -578,6 +588,12 @@ void Actions::Use()
 						room3_items = false;
 					}
 				}
+				else {
+					cout << " As soon as the liquid hits the floor it turns to gas" << endl;
+					cout << "You begin to choke on the gas" << endl;
+					cout << "You Died. Game Over.";
+					exit(20);
+				}
 			}
 			else if (command == "orange vial")
 			{
@@ -593,6 +609,12 @@ void Actions::Use()
 						room3_items = false;
 					}
 				}
+				else {
+					cout << " As soon as the liquid hits the floor it turns to gas" << endl;
+					cout << "You begin to choke on the gas" << endl;
+					cout << "You Died. Game Over.";
+					exit(20);
+				}
 			}
 			else if (command == "yellow vial")
 			{
@@ -607,6 +629,13 @@ void Actions::Use()
 						room3_finished = true;
 						room3_items = false;
 					}
+
+				}
+				else {
+					cout << " As soon as the liquid hits the floor it turns to gas" << endl;
+					cout << "You begin to choke on the gas" << endl;
+					cout << "You Died. Game Over.";
+					exit(20);
 				}
 			}
 			else if (command == "blue vial")
@@ -622,6 +651,12 @@ void Actions::Use()
 						room3_finished = true;
 						room3_items = false;
 					}
+				}
+				else {
+					cout << " As soon as the liquid hits the floor it turns to gas" << endl;
+					cout << "You begin to choke on the gas" << endl;
+					cout << "You Died. Game Over.";
+					exit(20);
 				}
 			}
 		}
