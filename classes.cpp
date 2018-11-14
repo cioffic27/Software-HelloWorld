@@ -282,7 +282,18 @@ void Actions::Pickup()
 				cout << "You picked up the fire" << endl;
 				cout << "You are now on fire!" << endl;
 				cout << "You died.  Game Over." << endl;
-				exit(20);
+				cout << "Would you like to continue? yes or no?" << endl;
+				getline(cin, command);
+				if ("yes") {
+					turn = turn + 5;
+					return;
+				
+					
+				}
+				else if ("No") {
+					exit(20);
+				}
+
 			}
 			else
 				cout << "This item is not here" << endl;
@@ -610,7 +621,18 @@ void Actions::Use()
 						cout << "As soon as the liquid hits the floor it turns to gas" << endl;
 						cout << "You begin to choke on the gas" << endl;
 						cout << "You died! Game Over.";
-						exit(20);
+						cout << "Would you like to continue? yes or no?" << endl;
+						getline(cin, command);
+						if ("yes") {
+							turn = turn + 5;
+							return;
+
+
+						}
+						else if ("No") {
+							exit(20);
+						}
+
 					}
 				}
 				else if (command == "orange vial")
@@ -633,7 +655,18 @@ void Actions::Use()
 						cout << "As soon as the liquid hits the floor it turns to gas" << endl;
 						cout << "You begin to choke on the gas" << endl;
 						cout << "You died! Game Over.";
-						exit(20);
+						cout << "Would you like to continue? yes or no?" << endl;
+						getline(cin, command);
+						if ("yes") {
+							turn = turn + 5;
+							return;
+
+
+						}
+						else if ("No") {
+							exit(20);
+						}
+
 					}
 				}
 				else if (command == "yellow vial")
@@ -656,7 +689,19 @@ void Actions::Use()
 						cout << "As soon as the liquid hits the floor it turns to gas" << endl;
 						cout << "You begin to choke on the gas" << endl;
 						cout << "You died! Game Over.";
-						exit(20);
+
+						cout << "Would you like to continue? yes or no?" << endl;
+						getline(cin, command);
+						if ("yes") {
+							turn = turn + 5;
+							return;
+
+
+						}
+						else if ("No") {
+							exit(20);
+						}
+
 					}
 				}
 				else if (command == "blue vial")
@@ -679,7 +724,18 @@ void Actions::Use()
 						cout << "As soon as the liquid hits the floor it turns to gas" << endl;
 						cout << "You begin to choke on the gas" << endl;
 						cout << "You died! Game Over.";
-						exit(20);
+						
+						cout << "Would you like to continue? yes or no?" << endl;
+						getline(cin, command);
+						if ("yes") {
+							turn = turn + 5;
+							return;
+
+
+						}
+						else if ("No") {
+							exit(20);
+						}
 					}
 				}
 			}
@@ -707,7 +763,21 @@ void Actions::Use()
 					turn++;
 				}
 				else
-					cout << "you cannot use that here." << endl;
+					cout << "You dig into the floor, the floor seems uneven." << endl;
+					cout << "The floor caves in and you fall to your death. Game Over." << endl;
+					cout << "Would you like to continue? yes or no?" << endl;
+					getline(cin, command);
+					if ("yes") {
+
+						return;
+
+
+					}
+					else if ("No") {
+						exit(20);
+					}
+
+
 			}
 			else if (command == "white zinfindel")
 			{
