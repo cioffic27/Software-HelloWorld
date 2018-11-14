@@ -5,9 +5,9 @@
 #include <algorithm>
 #include "classes.h"
 using namespace std;
-
-int turn;
 int total_turns;
+int turn;
+
 
 int main()
 {
@@ -72,7 +72,7 @@ int main()
 			cout << "move, pickup/pick up, use, inventory/items, commands, quit/exit" << endl;
 			while (room1.room1_finished != true)
 			{
-				if (total_turns - room1.turn == 0)
+				if (total_turns - room1.turn <= 0)
 				{
 					cout << "You were not able to escape the house quickly enough and are now trapped forever" << endl;
 					exit(20);
@@ -102,7 +102,7 @@ int main()
 			cout << "Welcome to the second room \n";
 			while (room2.room2_finished != true)
 			{
-				if (total_turns - (room1.turn + room2.turn) == 0)
+				if (total_turns - (room1.turn + room2.turn) <= 0)
 				{
 					cout << "You were not able to escape the house quickly enough and are now trapped forever" << endl;
 					exit(20);
@@ -133,7 +133,7 @@ int main()
 			cout << "Welcome to the Third room \n";
 			while (room3.room3_finished != true)
 			{
-				if (total_turns - (room1.turn + room2.turn + room3.turn) == 0)
+				if (total_turns - (room1.turn + room2.turn + room3.turn) <= 0)
 				{
 					cout << "You were not able to escape the house quickly enough and are now trapped forever" << endl;
 					exit(20);
@@ -165,7 +165,7 @@ int main()
 			cout << "Welcome to the Fourth room! \n";
 			while (room4.room4_finished != true)
 			{
-				if (total_turns - (room1.turn + room2.turn + room3.turn + room4.turn) == 0)
+				if (total_turns - (room1.turn + room2.turn + room3.turn + room4.turn) <= 0)
 				{
 					cout << "You were not able to escape the house quickly enough and are now trapped forever" << endl;
 					exit(20);
