@@ -72,7 +72,7 @@ int main()
 				turn_cap = 35;
 			cout << endl;
 			cout << "Here is the list of possible commands:" << endl;
-			cout << "move, pickup/pick up, use, inventory/items, commands, look, quit/exit" << endl<<endl;
+			cout << "move, pickup/pick up, use, inventory/items, commands, look, turn, quit/exit" << endl<<endl;	//New Issue Ticket 249
 			while (room1.room1_finished != true)
 			{
 				total_turns = room1.turn;
@@ -115,6 +115,11 @@ int main()
 					{
 						cout << endl;
 						room1.Look();
+					}
+					else if (command == "TURN")																				//New Issue Ticket 249
+					{
+						cout << "It is currently turn " << total_turns << endl;												//New Issue Ticket 249
+						cout << "You have " << turn_cap - total_turns - 1 << " turns remaining." << endl << endl;			//New Issue Ticket 249
 					}
 					else if (command == "QUIT" || command == "EXIT")
 						exit(20);
@@ -168,6 +173,11 @@ int main()
 					{
 						cout << endl;
 						room2.Look();
+					}
+					else if (command == "TURN")																				//New Issue Ticket 249
+					{
+						cout << "It is currently turn " << total_turns << endl;												//New Issue Ticket 249
+						cout << "You have " << turn_cap - total_turns - 1 << " turns remaining." << endl << endl;			//New Issue Ticket 249
 					}
 					else if (command == "QUIT" || command == "EXIT")
 						exit(20);
@@ -223,6 +233,11 @@ int main()
 						cout << endl;
 						room3.Look();
 					}
+					else if (command == "TURN")																				//New Issue Ticket 249
+					{
+						cout << "It is currently turn " << total_turns << endl;												//New Issue Ticket 249
+						cout << "You have " << turn_cap - total_turns - 1 << " turns remaining." << endl << endl;			//New Issue Ticket 249
+					}
 					else if (command == "QUIT" || command == "EXIT")
 						exit(20);
 					else
@@ -277,6 +292,11 @@ int main()
 					{
 						cout << endl;
 						room4.Look();
+					}
+					else if (command == "TURN")																				//New Issue Ticket 249
+					{
+						cout << "It is currently turn " << total_turns << endl;												//New Issue Ticket 249
+					    cout << "You have " << turn_cap - total_turns - 1 << " turns remaining." << endl << endl;			//New Issue Ticket 249
 					}
 					else if (command == "QUIT" || command == "EXIT")
 						exit(20);

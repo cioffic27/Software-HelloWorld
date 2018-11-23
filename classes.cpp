@@ -344,8 +344,15 @@ void Actions::Pickup()
 						cout << endl<<"You picked up the candle." << endl<<endl;
 						list->InsertAtFront("candle1");
 					}
-					else
-						cout <<endl<< "You don't see a candle here yet." << endl<<endl;
+					else //New Issue Ticket 250
+					{
+						//cout <<endl<< "You don't see a candle here yet." << endl<<endl;
+						cout << "you reach in to grab what's in the fireplace" << endl;
+						cout << "but your sleeve catches on fire!"
+						cout << "You are now on fire!" << endl;
+						cout << "You died. Game Over." << endl;
+						exit(20);
+					}
 				}
 				else if (playerPlace == east)
 				{
@@ -909,7 +916,7 @@ void Actions::Inventory()
 void Actions::Commands()
 {
 	cout << "These are the possible commands:" << endl;
-	cout << "move, pickup/pick up, use, inventory/items, commands, look, quit/exit" << endl << endl;
+	cout << "move, pickup/pick up, use, inventory/items, commands, look, turn, quit/exit" << endl << endl;	//New Issue Ticket 249
 }
 
 void Actions::Look()
