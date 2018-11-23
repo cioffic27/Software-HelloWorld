@@ -72,6 +72,7 @@ public:
 	bool code_entering = false;
 
 	//room 2 escape variables
+	bool tools_used = false;				//New Issue Ticket 250
 	bool candle1_used = false;
 	bool candle2_used = false;
 	bool candle3_used = false;
