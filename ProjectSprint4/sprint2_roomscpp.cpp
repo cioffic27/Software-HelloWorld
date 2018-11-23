@@ -295,7 +295,7 @@ int main()
 					}
 					else if (command == "TURN")																				//New Issue Ticket 249
 					{
-						cout << "It is currently turn " << total_turns << endl;												//New Issue Ticket 249
+					    cout << "It is currently turn " << total_turns << endl;												//New Issue Ticket 249
 					    cout << "You have " << turn_cap - total_turns - 1 << " turns remaining." << endl << endl;			//New Issue Ticket 249
 					}
 					else if (command == "QUIT" || command == "EXIT")
